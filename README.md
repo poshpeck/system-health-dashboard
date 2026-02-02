@@ -1,27 +1,26 @@
 # 🚀 System Health Dashboard
+![Docker Image CI](https://github.com/poshpeck/system-health-dashboard/actions/workflows/docker-build.yml/badge.svg)
+
 A lightweight, containerized DevOps project that monitors real-time CPU and RAM usage on your host machine.
 
 ---
 
 ## 📖 Overview
-This project serves as a foundational DevOps exercise. It demonstrates how to build a Python-based monitoring tool, package it into a **Docker** container, and prepare it for a **CI/CD pipeline**.
+This project serves as a foundational DevOps exercise. It demonstrates how to build a Python-based monitoring tool, package it into a **Docker** container, and automate the build process using **GitHub Actions**.
 
 
 
 ## 🛠️ Tools & Technologies
 * **Language:** Python 3.9
-* **Web Framework:** Flask (to serve the dashboard)
-* **Monitoring:** Psutil (to access hardware metrics)
-* **Containerization:** Docker (to ensure it runs anywhere)
-* **Version Control:** Git & GitHub
+* **Web Framework:** Flask
+* **Monitoring:** Psutil
+* **Containerization:** Docker
+* **Registry:** Docker Hub
+* **CI/CD:** GitHub Actions
 
 ---
 
 ## 🚀 How to Run (Local Machine)
-
-### Prerequisites
-* [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
-* Git installed.
 
 ### 1. Clone the repository
 ```powershell
@@ -75,3 +74,6 @@ We use psutil to fetch system data. This is a core concept in Observability, a m
 cpu_usage = psutil.cpu_percent(interval=1)
 ram_usage = psutil.virtual_memory().percent
 ```
+---
+
+Created by Paul as part of a DevOps Learning Journey.
