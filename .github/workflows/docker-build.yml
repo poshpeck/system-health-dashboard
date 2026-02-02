@@ -1,0 +1,21 @@
+name: Docker Image CI  # The name that shows up in the "Actions" tab
+
+on:
+  push:
+    branches: [ "main" ]  # Run this when code is pushed to the main branch
+  pull_request:
+    branches: [ "main" ]  # Run this when someone wants to merge code
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use a fresh Linux virtual machine in the cloud
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4  # Step 1: Pull your code from GitHub into the VM
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3  # Step 2: Prepare the Docker engine in the cloud
+
+    - name: Build Docker Image
+      run: docker build -t system-monitor:test .  # Step 3: Run the build command
